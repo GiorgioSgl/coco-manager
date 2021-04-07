@@ -39,7 +39,7 @@ class CocoFilter():
             if image_id not in self.images:
                 self.images[image_id] = image
             else:
-                print(f'ERROR: Skipping duplicate image id: {image}')
+                print('ERROR: Skipping duplicate image id:',image)
                 
     def _process_segmentations(self):
         self.segmentations = dict()
@@ -56,7 +56,7 @@ class CocoFilter():
         """
         missing_categories = set(self.filter_categories) - self.category_set
         if len(missing_categories) > 0:
-            print(f'Did not find categories: {missing_categories}')
+            print('Did not find categories:',missing_categories)
             should_continue = input('Continue? (y/n) ').lower()
             if should_continue != 'y' and should_continue != 'yes':
                 print('Quitting early.')
