@@ -24,7 +24,7 @@ class CocoFilter():
                 self.categories[cat_id] = category
                 self.category_set.add(category['name'])
             else:
-                print(f'ERROR: Skipping duplicate category id: {category}')
+                print(f'ERROR: Skipping duplicate category id: {cat_id}')
             
             # Add category id to the super_categories dict
             if super_category not in self.super_categories:
